@@ -1,4 +1,4 @@
-package com.adventurer.board.entity;
+package com.adventurer.board.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import javax.xml.stream.events.Comment;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -17,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Table(name = "board")
-public class BoardEntity {
+public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "board_id")
@@ -33,9 +31,9 @@ public class BoardEntity {
     private String title;
 
     @Column(nullable = false)
-    private LocalDate create_date;
+    private LocalDateTime createDate;
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Comment> comments = new ArrayList<>();
+    private List<Comment> comments;
 }
 
