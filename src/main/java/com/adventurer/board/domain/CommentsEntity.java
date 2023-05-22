@@ -33,4 +33,3 @@ public class CommentsEntity {
     private User user; // 작성자
 }
 
-}
