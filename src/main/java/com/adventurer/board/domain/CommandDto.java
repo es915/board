@@ -12,9 +12,9 @@ public class CommandDto {
     private LocalDateTime createDate;
 
     // Entity -> Dto
-//    public CommandDto(Command command) {
-//        this.id = board.getId();
-//        this.content = board.getContent();
-//        this.createDate = board.getCreateDate();
-//    }
+    public CommandDto(Comment comment) {
+        this.id = comment.getId();
+        this.content = comment.getContent();
+        this.createDate = comment.getCreateDate();
+    }
 }

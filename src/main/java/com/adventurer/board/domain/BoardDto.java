@@ -13,10 +13,10 @@ public class BoardDto {
     private LocalDateTime createDate;
 
     // Entity -> Dto
-//    public BoardDto(Board board) {
-//        this.id = board.getId();
-//        this.title = board.getTitle();
-//        this.content = board.getContent();
-//        this.createDate =board.getCreateDate();
-//    }
+    public BoardDto(Board board) {
+        this.id = board.getId();
+        this.title = board.getTitle();
+        this.content = board.getContent();
+        this.createDate = board.getCreateDate();
+    }
 }
