@@ -33,23 +33,23 @@ public class Board {
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
 
-    @Builder
-    public Board(Long view, String content, String title, LocalDateTime createDate, List<Comment> comments){
-        this.view = view;
-        this.content = content;
-        this.title = title;
-        this.createDate = createDate;
-        this.comments = comments;
+    public static Board createBoard(Long view, String content, String title, LocalDateTime createDate, List<Comment> comments){
+        Board board = new Board();
+        board.view = view;
+        board.content = content;
+        board.title = title;
+        board.createDate = createDate;
+        board.comments = comments;
+        return board;
     }
 
-    public Board toEntity(){
-        return Board.builder()
-                .view(view)
-                .content(content)
-                .title(title)
-                .createDate(createDate)
-                .comments(comments)
-                .build();
+    public Board toEntity(Board board){
+        this.view = board.getView();
+        this.content = board.getContent();
+        this.title = board.title;
+        this.createDate = board.createDate;
+        this.comments = board.comments;
+        return this;
     }
 }
 
