@@ -38,4 +38,17 @@ public class Comment {
         this.createDate = commentDto.getCreateDate();
         this.board = commentDto.getBoard();
     }
+    public static Comment creatComment(Long id, String content, LocalDateTime createDate, Board board){
+        Comment comment = new Comment();
+        comment.id = id;
+        comment.content = content;
+        comment.createDate = createDate;
+        comment.board = board;
+        return comment;
+    }
+
 }
+
+
+
+
