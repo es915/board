@@ -12,7 +12,6 @@ public class BoardDto {
     private String title;
     private String content;
     private LocalDateTime createDate;
-
     private List<Comment> comments;
 
     // Entity -> Dto
