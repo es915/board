@@ -43,13 +43,14 @@ public class Board {
         return board;
     }
 
-    public Board toEntity(Board board){
-        this.view = board.getView();
-        this.content = board.getContent();
-        this.title = board.title;
-        this.createDate = board.createDate;
-        this.comments = board.comments;
-        return this;
+    public Board toEntity(BoardDto boardDto){
+        Board board = new Board();
+        board.view = boardDto.getView();
+        board.content = boardDto.getContent();
+        board.title = boardDto.getTitle();
+        board.createDate = boardDto.getCreateDate();
+        board.comments = boardDto.getComments();
+        return board;
     }
 }
 
