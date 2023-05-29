@@ -29,15 +29,16 @@ public class Comment {
     private Board board;
 
     // dto -> entity
-    public static Comment toEntity(CommentDto commentDto) {
-        return new Comment(commentDto);
+    public Comment toEntity(CommentDto commentDto) {
+        Comment comment = new Comment();
+        comment.id = commentDto.getId();
+        comment.content = commentDto.getContent();
+        comment.createDate = commentDto.getCreateDate();
+        comment.board = commentDto.getBoard();
+        return comment;
     }
-    private Comment(CommentDto commentDto) {
-        this.id = commentDto.getId();
-        this.content = commentDto.getContent();
-        this.createDate = commentDto.getCreateDate();
-        this.board = commentDto.getBoard();
-    }
+
+    // 정적 생성 메서드
     public static Comment creatComment(Long id, String content, LocalDateTime createDate, Board board){
         Comment comment = new Comment();
         comment.id = id;
