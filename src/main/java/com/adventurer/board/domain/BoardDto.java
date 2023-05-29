@@ -9,10 +9,10 @@ import java.util.List;
 @Getter @Setter
 public class BoardDto {
     private Long id;
+    private Long view;
     private String title;
     private String content;
     private LocalDateTime createDate;
-
     private List<Comment> comments;
 
     // Entity -> Dto
@@ -22,6 +22,7 @@ public class BoardDto {
 
     private BoardDto(Board board) {
         this.id = board.getId();
+        this.view = board.getView();
         this.title = board.getTitle();
         this.content = board.getContent();
         this.createDate = board.getCreateDate();
