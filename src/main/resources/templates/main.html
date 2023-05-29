@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 리스트 페이지</title>
+</head>
+
+<style>
+    .layout {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+</style>
+<body>
+
+<div class="layout">
+    <table>
+        <thead>
+        <tr>
+            <th>글번호</th>
+            <th>제목</th>
+            <th>조회수</th>
+            <th>작성일자</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "boardDto:${list}">
+            <td th:text="${boardDto.id}">1</td>
+            <td th:text="${boardDto.title}">제목입니다1.</td>
+            <td th:text="${boardDto.view}">10</td>
+            <td th:text="${boardDto.createDate}">23-05-20</td>
+        </tr>
+        <tr th:each = "boardDto:${list}">
+            <td th:text="${boardDto.id}">2</td>
+            <td th:text="${boardDto.title}">제목입니다2.</td>
+            <td th:text="${boardDto.view}">30</td>
+            <td th:text="${boardDto.createDate}">23-05-21</td>
+        </tr>
+        <tr th:each = "boardDto:${list}">
+            <td th:text="${boardDto.id}">3</td>
+            <td th:text="${boardDto.title}">제목입니다3.</td>
+            <td th:text="${boardDto.view}">5</td>
+            <td th:text="${boardDto.createDate}">23-05-25</td>
+        </tr>
+        <tr th:each = "boardDto:${list}">
+            <td th:text="${boardDto.id}">4</td>
+            <td th:text="${boardDto.title}">제목입니다4.</td>
+            <td th:text="${boardDto.view}">0</td>
+            <td th:text="${boardDto.createDate}">23-05-29</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -38,7 +38,7 @@ public class Comment {
     }
 
     // 정적 생성 메서드
-    public static Comment creatComment(Long id, String content, LocalDateTime createDate, Board board){
+    public static Comment creatComment(String content, LocalDateTime createDate, Board board){
         Comment comment = new Comment();
         comment.content = content;
         comment.createDate = createDate;
