@@ -20,7 +20,14 @@ public class BoardService {
     @Transactional
     public void save(BoardDto boardDto){
         Board board = Board.toEntity(boardDto);
-        boardRepository.save(board);
+        Board cBoard = Board.createBoard(
+                board.getView(),
+                board.getContent(),
+                board.getTitle(),
+                board.getCreateDate(),
+                board.getComments()
+        );
+        boardRepository.save(cBoard);
     }
 
     // 게시글 조회
@@ -40,6 +47,7 @@ public class BoardService {
     }
 
     // controller에서 사용될 findById 메소드
+    // 참고 영상 : 코딩레시피
     public BoardDto findById(Long id){
         Optional<Board> optionalBoard = boardRepository.findById(id);
         if(optionalBoard.isPresent()){
