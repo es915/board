@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter @Setter
 public class BoardDto {
@@ -12,11 +13,18 @@ public class BoardDto {
     private String content;
     private LocalDateTime createDate;
 
+    private List<Comment> comments;
+
     // Entity -> Dto
-    public BoardDto(Board board) {
+    public static BoardDto toDto(Board board) {
+        return new BoardDto(board);
+    }
+
+    private BoardDto(Board board) {
         this.id = board.getId();
         this.title = board.getTitle();
         this.content = board.getContent();
         this.createDate = board.getCreateDate();
+        this.comments = board.getComments();
     }
 }

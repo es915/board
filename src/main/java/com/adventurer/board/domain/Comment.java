@@ -27,4 +27,15 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "board_id")
     private Board board;
+
+    // dto -> entity
+    public static Comment toEntity(CommentDto commentDto) {
+        return new Comment(commentDto);
+    }
+    private Comment(CommentDto commentDto) {
+        this.id = commentDto.getId();
+        this.content = commentDto.getContent();
+        this.createDate = commentDto.getCreateDate();
+        this.board = commentDto.getBoard();
+    }
 }
