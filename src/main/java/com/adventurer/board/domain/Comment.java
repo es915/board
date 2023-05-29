@@ -28,7 +28,7 @@ public class Comment {
     private Board board;
 
     // dto -> entity
-    public Comment toEntity(CommentDto commentDto) {
+    public static Comment toEntity(CommentDto commentDto) {
         Comment comment = new Comment();
         comment.id = commentDto.getId();
         comment.content = commentDto.getContent();
