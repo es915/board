@@ -30,6 +30,7 @@ public class BoardService {
         boardRepository.save(cBoard);
     }
 
+
     // 게시글 조회
     public List<BoardDto> findAll(){
         List<Board> boardList = boardRepository.findAll();
