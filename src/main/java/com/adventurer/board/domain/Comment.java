@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -38,9 +37,8 @@ public class Comment {
         this.createDate = commentDto.getCreateDate();
         this.board = commentDto.getBoard();
     }
-    public static Comment creatComment(Long id, String content, LocalDateTime createDate, Board board){
+    public static Comment creatComment(String content, LocalDateTime createDate, Board board){
         Comment comment = new Comment();
-        comment.id = id;
         comment.content = content;
         comment.createDate = createDate;
         comment.board = board;
