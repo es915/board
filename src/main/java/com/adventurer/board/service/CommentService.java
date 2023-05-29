@@ -10,20 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-<<<<<<< HEAD
-import java.util.ArrayList;
-import java.util.List;
-
-public interface CommentService {
-
-    static void save(Comment comment) {
-        // 구현 로직
-    }
-
-    Comment findById(Long id) throws Exception;
-
-    List<Comment> findAll();
-=======
 @Service
 @RequiredArgsConstructor
 public class CommentService {
@@ -47,6 +33,11 @@ public class CommentService {
     public List<Comment> findAll() {
         return commentRepository.findAll();
     }
+    // 관리자 페이지
+    // 댓글 삭제
+    public void delete(Long id){
+        commentRepository.deleteById(id);
+    }
 
->>>>>>> 5b94814697a3ca455e199abf8791e8f94891978e
+
 }
