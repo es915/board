@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
+@Setter
 public class BoardDto {
     private Long id;
     private Long view;
