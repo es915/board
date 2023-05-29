@@ -32,5 +32,11 @@ public class CommentService {
     public List<Comment> findAll() {
         return commentRepository.findAll();
     }
+    // 관리자 페이지
+    // 댓글 삭제
+    public void delete(Long id){
+        commentRepository.deleteById(id);
+    }
+
 
 }
