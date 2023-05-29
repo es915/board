@@ -59,4 +59,10 @@ public class BoardService {
         }
     }
 
+    // 관리자 페이지
+    // 게시글 삭제
+    public void delete(Long id){
+        boardRepository.deleteById(id);
+    }
+
 }
