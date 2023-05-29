@@ -1,9 +1,6 @@
 package com.adventurer.board.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -35,5 +32,24 @@ public class Board {
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
+
+    public static Board createBoard(Long view, String content, String title, LocalDateTime createDate, List<Comment> comments){
+        Board board = new Board();
+        board.view = view;
+        board.content = content;
+        board.title = title;
+        board.createDate = createDate;
+        board.comments = comments;
+        return board;
+    }
+
+    public Board toEntity(Board board){
+        this.view = board.getView();
+        this.content = board.getContent();
+        this.title = board.title;
+        this.createDate = board.createDate;
+        this.comments = board.comments;
+        return this;
+    }
 }
 
