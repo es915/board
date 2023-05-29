@@ -43,7 +43,7 @@ public class Board {
         return board;
     }
 
-    public Board toEntity(BoardDto boardDto){
+    public static Board toEntity(BoardDto boardDto){
         Board board = new Board();
         board.view = boardDto.getView();
         board.content = boardDto.getContent();
