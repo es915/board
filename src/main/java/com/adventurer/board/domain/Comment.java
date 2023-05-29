@@ -28,13 +28,6 @@ public class Comment {
     @JoinColumn(name = "board_id")
     private Board board;
 
-<<<<<<< HEAD:src/main/java/com/adventurer/board/domain/CommentsEntity.java
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user; // 작성자
-}
-
-=======
     // dto -> entity
     public static Comment toEntity(CommentDto commentDto) {
         return new Comment(commentDto);
@@ -45,5 +38,17 @@ public class Comment {
         this.createDate = commentDto.getCreateDate();
         this.board = commentDto.getBoard();
     }
+    public static Comment creatComment(Long id, String content, LocalDateTime createDate, Board board){
+        Comment comment = new Comment();
+        comment.id = id;
+        comment.content = content;
+        comment.createDate = createDate;
+        comment.board = board;
+        return comment;
+    }
+
 }
->>>>>>> 2a88ad7e39641cf03d67f1fd445fd17e79eddae7:src/main/java/com/adventurer/board/domain/Comment.java
+
+
+
+
