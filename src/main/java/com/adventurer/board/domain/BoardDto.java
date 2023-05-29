@@ -6,7 +6,8 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter @Setter
+@Getter
+@Setter
 public class BoardDto {
     private Long id;
     private Long view;
