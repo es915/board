@@ -2,7 +2,6 @@ package com.adventurer.board.service;
 
 import com.adventurer.board.domain.Comment;
 import com.adventurer.board.domain.CommentDto;
-import com.adventurer.board.repository.BoardRepository;
 import com.adventurer.board.repository.CommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,7 +27,6 @@ public class CommentService {
             return comment.get();
         }
     }
-
 
     public List<Comment> findAll() {
         return commentRepository.findAll();
