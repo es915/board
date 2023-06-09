@@ -6,8 +6,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
-@Setter
+@Getter @Setter
 public class BoardDto {
     private Long id;
     private Long view;
@@ -28,5 +27,24 @@ public class BoardDto {
         this.content = board.getContent();
         this.createDate = board.getCreateDate();
         this.comments = board.getComments();
+    }
+
+    public BoardDto(String title, String content) {
+        this.title = title;
+        this.content = content;
+        this.view = 0L;
+        this.createDate = LocalDateTime.now();
+    }
+
+    @Override
+    public String toString() {
+        return "BoardDto{" +
+                "id='" + id + '\'' +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", view='" + view + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", comments='" + comments + '\'' +
+                '}';
     }
 }

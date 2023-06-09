@@ -15,6 +15,7 @@
 <body>
 
 <div class="layout">
+    <button onClick="location.href='/board/create'">글 작성하기</button>
     <table>
         <thead>
         <tr>
@@ -30,24 +31,6 @@
             <td th:text="${boardDto.title}">제목입니다1.</td>
             <td th:text="${boardDto.view}">10</td>
             <td th:text="${boardDto.createDate}">23-05-20</td>
-        </tr>
-        <tr th:each = "boardDto:${list}">
-            <td th:text="${boardDto.id}">2</td>
-            <td th:text="${boardDto.title}">제목입니다2.</td>
-            <td th:text="${boardDto.view}">30</td>
-            <td th:text="${boardDto.createDate}">23-05-21</td>
-        </tr>
-        <tr th:each = "boardDto:${list}">
-            <td th:text="${boardDto.id}">3</td>
-            <td th:text="${boardDto.title}">제목입니다3.</td>
-            <td th:text="${boardDto.view}">5</td>
-            <td th:text="${boardDto.createDate}">23-05-25</td>
-        </tr>
-        <tr th:each = "boardDto:${list}">
-            <td th:text="${boardDto.id}">4</td>
-            <td th:text="${boardDto.title}">제목입니다4.</td>
-            <td th:text="${boardDto.view}">0</td>
-            <td th:text="${boardDto.createDate}">23-05-29</td>
         </tr>
         </tbody>
     </table>
